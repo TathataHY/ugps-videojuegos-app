@@ -1,6 +1,30 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import GameDetail from '../../components/GameDetail';
+import gameService from '../../services/api';
+
+// Esta función es necesaria para rutas dinámicas en modo SSG (Static Site Generation)
+export async function getStaticPaths() {
+  try {
+    // Por defecto, pregenerar algunas rutas comunes (los primeros 20 juegos)
+    const response = await gameService.getTopRatedGames(1, 20);
+    const games = response.data.results;
+    
+    return games.map(game => ({
+      params: { id: game.id.toString() },
+    }));
+  } catch (error) {
+    console.error("Error al obtener juegos para rutas estáticas:", error);
+    // Devolver al menos una ruta para evitar errores de compilación
+    return [
+      { params: { id: '5286' } }, // The Legend of Zelda: Ocarina of Time
+      { params: { id: '4200' } }, // Portal 2
+      { params: { id: '28' } },   // Red Dead Redemption 2
+      { params: { id: '3498' } }, // Grand Theft Auto V
+      { params: { id: '3328' } }, // The Witcher 3
+    ];
+  }
+}
 
 // Obtener el ID del juego de los parámetros de URL
 const { id } = Astro.params;
