@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GameDetail from '../../components/GameDetail';
+
+// Obtener el ID del juego de los parámetros de URL
+const { id } = Astro.params;
+
+// Validar que el ID existe y es un número
+if (!id || isNaN(Number(id))) {
+  return Astro.redirect('/404');
+}
+
+const gameId = Number(id);
+---
+
+<Layout title="Detalle del Juego | UGPS Videojuegos">
+  <main>
+    <GameDetail gameId={gameId} client:load />
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+</style> 

@@ -1,0 +1,91 @@
+/* Estilos para GameList */
+.game-list-container {
+  width: 100%;
+}
+
+.search-bar-container {
+  margin-bottom: 2rem;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-container {
+    display: none;
+  }
+}
+
+.games-container {
+  width: 100%;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.game-card-wrapper {
+  height: 100%;
+}
+
+.loading-message,
+.error-message,
+.no-games-message {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.loading-message {
+  color: #ddd;
+}
+
+.error-message {
+  color: #ff6b6b;
+}
+
+.no-games-message {
+  color: #ddd;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  background-color: #ff7a50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #ff6a40;
+}
+
+.pagination-button.disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.page-info {
+  color: #ddd;
+  font-size: 0.9rem;
+} 

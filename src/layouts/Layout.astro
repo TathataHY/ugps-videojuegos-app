@@ -1,0 +1,184 @@
+---
+interface Props {
+	title?: string;
+}
+
+const { title = 'UGPS Videojuegos' } = Astro.props;
+
+// Importar estilos CSS
+import '../styles/game-card.css';
+import '../styles/game-list.css';
+import '../styles/search-bar.css';
+import '../styles/filter-section.css';
+import '../styles/game-detail.css';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Aplicación web de UGPS para buscar y visualizar información sobre videojuegos" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="app-container">
+			<header>
+				<div class="header-content">
+					<h1 class="logo">
+						<a href="/">UGPS <span>Videojuegos</span></a>
+					</h1>
+					<nav>
+						<ul>
+							<li><a href="/">Inicio</a></li>
+							<li><a href="/about">Acerca de</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<main>
+				<slot />
+			</main>
+			<footer>
+				<div class="footer-content">
+					<p>&copy; {new Date().getFullYear()} UGPS Videojuegos</p>
+					<p>Desarrollado como prueba técnica para UGPS</p>
+					<p>Datos proporcionados por <a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG API</a></p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-bg: #121212;
+		--color-text: #ffffff;
+		--color-text-secondary: #aaaaaa;
+		--color-primary: #ff7a50;
+		--color-primary-hover: #ff6a40;
+		--color-card-bg: #202020;
+		--color-card-hover: #2a2a2a;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+		background: var(--color-bg);
+		color: var(--color-text);
+	}
+
+	body {
+		min-height: 100vh;
+	}
+	
+	.app-container {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	header {
+		background-color: #202020;
+		border-bottom: 1px solid #333;
+		width: 100%;
+		padding: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+	}
+
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 1rem 2rem;
+		width: 100%;
+	}
+
+	.logo a {
+		color: var(--color-text);
+		text-decoration: none;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	.logo span {
+		color: var(--color-primary);
+	}
+
+	nav ul {
+		display: flex;
+		list-style: none;
+		gap: 2rem;
+	}
+
+	nav a {
+		color: var(--color-text);
+		text-decoration: none;
+		font-size: 1.1rem;
+		font-weight: 500;
+		transition: color 0.2s;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+	}
+
+	nav a:hover {
+		color: var(--color-primary);
+		background-color: rgba(255, 122, 80, 0.1);
+	}
+
+	main {
+		flex: 1;
+		width: 100%;
+		margin-top: 70px; /* Ajustar según la altura del encabezado */
+	}
+
+	footer {
+		background-color: #151515;
+		padding: 2rem;
+		margin-top: 3rem;
+	}
+
+	.footer-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+		color: var(--color-text-secondary);
+	}
+
+	.footer-content p {
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-content a {
+		color: var(--color-primary);
+		text-decoration: none;
+	}
+
+	.footer-content a:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.header-content {
+			flex-direction: column;
+			gap: 1rem;
+			padding: 1rem;
+		}
+
+		nav ul {
+			gap: 1rem;
+		}
+	}
+</style>

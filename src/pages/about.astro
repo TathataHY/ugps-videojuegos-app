@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Acerca de | UGPS Videojuegos">
+  <main>
+    <h1>Acerca de este proyecto</h1>
+    
+    <section class="about-section">
+      <h2>UGPS Videojuegos</h2>
+      <p>
+        Esta aplicación ha sido desarrollada como parte de una prueba técnica para UGPS. Es una plataforma
+        que permite a los usuarios explorar videojuegos, filtrarlos por diferentes criterios y ver información
+        detallada sobre cada título.
+      </p>
+      
+      <h2>Características principales</h2>
+      <ul>
+        <li>Lista de videojuegos ordenados por puntuación de Metacritic</li>
+        <li>Búsqueda de videojuegos por texto</li>
+        <li>Filtrado por año, género, plataforma, tags y desarrolladores</li>
+        <li>Visualización de detalles completos de cada juego</li>
+        <li>Trailers y capturas de pantalla</li>
+      </ul>
+      
+      <h2>Tecnologías utilizadas</h2>
+      <ul>
+        <li>
+          <strong>Astro:</strong> Framework web para la creación de sitios web rápidos y optimizados
+        </li>
+        <li>
+          <strong>React:</strong> Biblioteca para construir interfaces de usuario interactivas
+        </li>
+        <li>
+          <strong>Styled Components:</strong> Para el estilizado de componentes con CSS-in-JS
+        </li>
+        <li>
+          <strong>Axios:</strong> Para realizar peticiones HTTP a la API de RAWG
+        </li>
+      </ul>
+      
+      <h2>API de RAWG</h2>
+      <p>
+        Esta aplicación utiliza la API pública de RAWG para obtener toda la información sobre los videojuegos.
+        La API proporciona datos detallados como fechas de lanzamiento, puntuaciones, plataformas, géneros,
+        imágenes, trailers y mucho más.
+      </p>
+      <p>
+        Puedes consultar más información sobre la API en <a href="https://rawg.io/apidocs" target="_blank" rel="noopener noreferrer">la documentación oficial</a>.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .about-section {
+    background-color: #202020;
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin: 2rem 0 1rem;
+  }
+  
+  h2:first-of-type {
+    margin-top: 0;
+  }
+  
+  p {
+    color: #dddddd;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  li {
+    color: #dddddd;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+  
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+</style> 

@@ -1,0 +1,111 @@
+/* Estilos para FilterSection */
+.filter-container {
+  background-color: #202020;
+  border-radius: 8px;
+  padding: 20px;
+  height: auto;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+}
+
+.filter-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.filter-container::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+
+.filter-container::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.filter-title {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group-title {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.filter-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.filter-options-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.filter-options-list::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+
+.filter-options-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  accent-color: #ff7a50;
+}
+
+.filter-checkbox label {
+  color: #dddddd;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.year-range-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.year-input {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px;
+  width: 80px;
+}
+
+.year-input::-webkit-inner-spin-button, 
+.year-input::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.year-separator {
+  color: #ddd;
+}
+
+.filter-loading {
+  color: #ddd;
+  padding: 20px;
+  text-align: center;
+} 

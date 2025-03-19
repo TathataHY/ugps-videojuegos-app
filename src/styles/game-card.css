@@ -1,0 +1,98 @@
+/* Estilos para GameCard */
+.game-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.game-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.no-image {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a;
+  color: #8f8f8f;
+}
+
+.content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.release-date {
+  font-size: 0.9rem;
+  color: #8f8f8f;
+  margin-bottom: 8px;
+}
+
+.metacritic-score {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.metacritic-score.high {
+  background-color: #6dc849;
+  color: #fff;
+}
+
+.metacritic-score.medium {
+  background-color: #ffbd3f;
+  color: #000;
+}
+
+.metacritic-score.low {
+  background-color: #ff4545;
+  color: #fff;
+}
+
+.platform-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.platform {
+  font-size: 0.8rem;
+  color: #ccc;
+  padding: 2px 6px;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.genres {
+  font-size: 0.85rem;
+  color: #aaa;
+} 
