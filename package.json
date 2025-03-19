@@ -1,0 +1,8 @@
+{
+  "name": "ugps-videojuegos-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "styled-components": "^6.0.7"
+  }
+}
